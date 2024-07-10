@@ -53,7 +53,25 @@ describe('Get the sum of two matrices/arrays', () => {
     
     });
 
+    it('should throw an error if any element is not an integer', () => {
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, '6']; 
+
+       
+        expect(() => arrSum(arr1, arr2)).toThrow('One or more elements are not integers.');
+    });
+
+    it('should throw an error if arrays contain non-integer elements', () => {
+        const arr1 = [1.5, 2, 3]; 
+        const arr2 = [4, 5, 6];
+
+       
+        expect(() => arrSum(arr1, arr2)).toThrow('One or more elements are not integers.');
+    });
+
+    
 });
+
 
 
 

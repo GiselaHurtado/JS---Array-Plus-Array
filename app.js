@@ -2,9 +2,12 @@ export function arrSum(arr1, arr2) {
     let sumaTotal = 0;
   
     for (let i = 0; i < arr1.length; i++) {
+      if (Number.isInteger(arr1[i]) && Number.isInteger(arr2[i])) {
       sumaTotal += arr1[i] + arr2[i];
+     } else {
+      throw new Error('One or more elements are not integers.');
+  }
     }
-  
     return sumaTotal;
   }
 
